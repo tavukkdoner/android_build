@@ -4146,6 +4146,8 @@ class DynamicPartitionsDifference(object):
         comment('Grow partition %s from %d to %d' %
                 (p, u.src_size, u.tgt_size))
         append('resize %s %d' % (p, u.tgt_size))
+        logger.info("Grow partition %s from %d to %d",
+                p, u.src_size, u.tgt_size)
 
     for p, u in self._partition_updates.items():
       if u.src_group and u.tgt_group and u.src_group != u.tgt_group:
